@@ -11,6 +11,7 @@ install:
   - ./travis.osx.sh
 
 script:
+  - "export PYTHON=`which python3`"
   - "./build.sh picosat-960"
 
 deploy:
