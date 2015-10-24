@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PICOSAT_DIR=$11
+PICOSAT_DIR=$1
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 if [ "X${PICOSAT_DIR}" == "X" ]; then
