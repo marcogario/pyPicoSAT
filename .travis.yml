@@ -14,10 +14,10 @@ script:
   - "export PYTHON=`which python3`"
   - "./build.sh picosat-960"
   - "if [ ${PYTHON_VERSION} == "2.7" ]; then python setup.py bdist_wheel; done"
-  - "if [ ${PYTHON_VERSION} == "2.7" ]; then python3 setup.py bdist_wheel; done"
+  - "if [ ${PYTHON_VERSION} == "3.4" ]; then python3 setup.py bdist_wheel; done"
 
-# addons:
-#   s3_region: "us-west-1" # defaults to "us-east-1"
-#   artifacts:
-#     paths:
-#       - $(ls dist/* | tr "\n" ":")
+addons:
+  s3_region: "eu-central-1"
+  artifacts:
+    paths:
+      - $(ls dist/* | tr "\n" ":")
