@@ -13,13 +13,15 @@ install:
 script:
   - "./build.sh picosat-960"
 
-# deploy:
-#   provider: pypi
-#   user: marco.gario
-#   password:
-#     secure: "B5rykJvd0ASENuipOIPYGZLaUgeWG525UYDL7lSBdNcv6umGXw+lmy0XqLWlOChMVyFaUb5wXb6z2rakek/Dy5l1Qi/cdUWsreICxpA/x3dQqC3Vrad3uHKvkbj3MIkVCRViQEPLcdl1bgCmScwv61pAajo1tjRZLsK0aZLxSgx7mbgYHSAvdlwfw3E5jXjcCUNmuj39Xb34dTVDUCh29F3lG0weFCyODyeOO5VYvwsn+bQC8lFWo6+wdevAQbegmos2gy9mFt8vaTFA7nV2y1NHsrlZ1A0m4YjsFzuxgTflA0Rwg5gjvF5F3aG8z2o0ylPpeHYIyoa5k9BnA+pmmKXkmBWc7WbUcwFm++LS1oWm2oR4tjnVc7WUKHAameG4wefICjDkCmsDN/5qDS7l3/ujvoHZiIGBI+F7EJy/ps5fy41H4JEt12nC0HznFSlyzeuOof0kOsqJS9NP8TANCrrXxojvTdtgd+fRSRwQGYJdHopH4NlqUDMt3Ipk9/PtNK5njlxRXiux6hOdAPIE6KGDH5nOiC7/0/YFrzVYd6Pd/HfoeX+AdfdSsCnZebyoYkttBMpsbufbCEjW6CU/XSCJktcvgq4hByI2a6ykiSfisndq4/NiYLYBrS3JQ6bQ+QVtDWNI7AVjGDtE993HWaYrNgYoXC7qHzV71b/y+qQ="
-# #server: https://testpypi.python.org/pypi
-#   on:
-#     all_branches: true
-#   distributions: sdist
-#   skip_cleanup: true # Need to Preserve generated SWIG
+deploy:
+  provider: pypi
+  user: marco.gario
+  server: https://testpypi.python.org/pypi
+  password:
+    # 1) Test 2) PyPI
+    secure: "bHExHE6zCIlnYrqstJ37stzO1VgIV0DNQdjsOgb4dTDEmPsXcgsVa2Y0rBBSr/Jy1Cvlz3lgmbT+flA/Bg7Ulw1ueibidEjXZY62W7H7TaGQ+YOKAqQwPi8YKaIkG9bdLHbCfbQPsZ19zEzFG9yTFUjHGLPZmWSeBhRA4nRjUbZ2RTp7W3aHwYjaMKWSBg0xiY/zKYTZVToJaA/NAvSZPGvGGS8jdiDksd+RbG5xuBQQJu2SAaj+/KdXKwNDH6Dr1kEvt7pRL7CAUZg6cdQwxkALwhgI5nf7bVYr3VqVP37r6K+lZodqbuDaJqVAEELd3SdFy4zgTtwIMPHoe/WsEqgtSURndYiB3o8IUF33iIiGUBuzwzQsorfsZ24vTNMlQ26+s4sCE+VkNjTcgEy4ckPCcZ+vr5eXy5g0KVOTsQCo/czQcBnDeTUnsPesGJ0z+xlJRhnVZkPfEtGqARRf5prTw6QwVu2kRv7uKZwHfSeG1d0Pg9ATBCUe7KMsfvopYJwlGvTyCcwuH6BLMoKzU2JT9Z94+KkYTN/qxEQVLBM1om0IsXVunUi8r8bgFvGcDYilMZyYOHQ1eCJov+Cs33/qspab+j7r54Vm2rxVd84vlzLFqKVN5aZYtKIRm7V3jj3TM7LCqAW60hae9nXbkXd7zAWPuJoBIs2xlrfG2H4="
+    #secure: "B5rykJvd0ASENuipOIPYGZLaUgeWG525UYDL7lSBdNcv6umGXw+lmy0XqLWlOChMVyFaUb5wXb6z2rakek/Dy5l1Qi/cdUWsreICxpA/x3dQqC3Vrad3uHKvkbj3MIkVCRViQEPLcdl1bgCmScwv61pAajo1tjRZLsK0aZLxSgx7mbgYHSAvdlwfw3E5jXjcCUNmuj39Xb34dTVDUCh29F3lG0weFCyODyeOO5VYvwsn+bQC8lFWo6+wdevAQbegmos2gy9mFt8vaTFA7nV2y1NHsrlZ1A0m4YjsFzuxgTflA0Rwg5gjvF5F3aG8z2o0ylPpeHYIyoa5k9BnA+pmmKXkmBWc7WbUcwFm++LS1oWm2oR4tjnVc7WUKHAameG4wefICjDkCmsDN/5qDS7l3/ujvoHZiIGBI+F7EJy/ps5fy41H4JEt12nC0HznFSlyzeuOof0kOsqJS9NP8TANCrrXxojvTdtgd+fRSRwQGYJdHopH4NlqUDMt3Ipk9/PtNK5njlxRXiux6hOdAPIE6KGDH5nOiC7/0/YFrzVYd6Pd/HfoeX+AdfdSsCnZebyoYkttBMpsbufbCEjW6CU/XSCJktcvgq4hByI2a6ykiSfisndq4/NiYLYBrS3JQ6bQ+QVtDWNI7AVjGDtE993HWaYrNgYoXC7qHzV71b/y+qQ="
+  on:
+    all_branches: true
+  distributions: "bdist_wheel"
+  skip_cleanup: true # Need to Preserve generated SWIG
