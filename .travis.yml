@@ -24,4 +24,4 @@ deploy:
   on:
     tags: true
     repo: marcogario/pyPicoSAT
-    branch: demo_macosx
+    branch: master
